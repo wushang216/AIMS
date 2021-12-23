@@ -1,0 +1,13 @@
+#email_send{
+    /*color: ;*/
+    position: relative;
+    top: 8px;
+    height: 30px;
+    width: 30px;
+}
+#email_input{
+    position: relative;
+    top: 0;
+    height: 45px;
+    width: 207px;
+}

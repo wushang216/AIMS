@@ -1,0 +1,16 @@
+small{
+    color: rgb(255, 255, 255);
+}
+#a_login{
+    font-size: 1px;
+    float: right;
+    text-decoration: none;
+    color: rgb(117, 117, 117);
+}
+#a_login:hover{
+    color: rgba(172, 190, 175,1);
+}
+input{
+    height: 46px;
+    width: 207px;
+}

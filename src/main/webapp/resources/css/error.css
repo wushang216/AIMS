@@ -1,0 +1,17 @@
+#center{
+    margin: 10% auto;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+#center_left {
+    margin-left: 10%;
+}
+#center_left div:nth-child(1){
+    font-size: 50px;
+    font-family: 华文琥珀;
+}
+#center_left div:nth-child(2){
+    font-size: 30px;
+    font-family: 华文行楷;
+}

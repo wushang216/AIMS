@@ -1,0 +1,41 @@
+#article_content{
+    min-height:1000px;
+}
+/*#article_content {*/
+/*    !*display: flex;*!*/
+/*    background-color: #00FFFF;*/
+/*}*/
+#article_content input{
+   /*display: block;*/
+    background-color: rgba(204, 217, 217, 0.66);
+}
+#article_content textarea{
+    width: 100%;
+    min-height: 900px;
+
+    border-style: double;
+    /*border: none;*/
+    /*resize: none;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    background-color: rgba(204, 217, 217, 0.66);
+}
+
+#article_footer p{
+    position: relative;
+    bottom: 60px;
+    padding-left: 20px;
+    font-family: 华文行楷;
+    font-size: 17px;
+    padding-right: 40px;
+    text-align: left;
+}
+#article_footer p{
+    position: relative;
+    bottom: 60px;
+    padding-left: 20px;
+    font-family: 华文行楷;
+    font-size: 17px;
+    padding-right: 40px;
+    text-align: left;
+}

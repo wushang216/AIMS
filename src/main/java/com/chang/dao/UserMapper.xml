@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chang.entity.userDao">
+    <select id="logIn" parameterType="userDate" resultType="userDate">
+        select user_id,user_password,identity,seal from user where user_id = #{user_id}
+    </select>
+    <select id="getUser" resultType="user" parameterType="user">
+        select user_id,user_name,user_email,avatar from user where user_id = #{user_id}
+    </select>
+    <select id="getEmail" resultType="userDate" parameterType="String">
+        select user_id,user_name,user_email,identity,seal from user where user_email = #{user_email}
+    </select>
+    <select id="getAllUser" resultType="userDate">
+        SELECT user_id,user_name,seal,DATE FROM USER WHERE identity = "user"
+    </select>
+    <insert id="registration" parameterType="userDate">
+        INSERT INTO USER(user_id,user_password,avatar)
+        VALUES(#{user_id},#{user_password},"")
+    </insert>
+    <update id="modify" parameterType="userDate">
+        UPDATE USER
+        SET user_name = #{user_name}, user_email = #{user_email}, sex = #{sex}, age = #{age}, address = #{address}, avatar = #{avatar}
+        WHERE user_id = #{user_id}
+    </update>
+    <update id="sealUserOneStep" parameterType="String">
+        UPDATE USER
+        SET seal = DATE_ADD(NOW(),INTERVAL 15 DAY)
+        WHERE user_id = #{id}
+    </update>
+    <update id="sealUserTowStep" parameterType="String">
+        UPDATE article
+        SET Audit = 0
+        WHERE user_id = #{id}
+    </update>
+    <update id="unSealUser" parameterType="String">
+        UPDATE USER
+        SET seal = NOW()
+        WHERE user_id = #{id}
+    </update>
+
+</mapper>
