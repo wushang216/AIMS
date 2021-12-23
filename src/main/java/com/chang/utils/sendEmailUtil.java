@@ -34,7 +34,6 @@ public class sendEmailUtil {
     public boolean sendHtmlMail(String receiveEmail,String name,String emailMsg)  {
         try {
             JavaMailSenderImpl senderImpl = new JavaMailSenderImpl();
-
             //邮箱的主机  如果是qq邮箱就是smtp.qq.com
             senderImpl.setHost("smtp.qq.com");
             //编码集
