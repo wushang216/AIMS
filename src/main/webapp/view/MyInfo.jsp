@@ -1,17 +1,6 @@
 <%@ page import="com.chang.dao.operateUser" %>
-<%@ page import="com.chang.dao.operateArticle" %>
-<%@ page import="com.chang.entity.user" %>
-<%@ page import="com.chang.entity.article" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Random" %>
-<%@ page import="com.chang.entity.userDate" %><%--
-  Created by IntelliJ IDEA.
-  User: 吴殇
-  Date: 2021/12/28
-  Time: 12:18
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.chang.entity.userDate" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  errorPage="error/notLogin.jsp"%>
 <html>
 <%
     operateUser operateUser = new operateUser();
@@ -113,11 +102,33 @@
             <span><%=user.getUser_name()%></span></br>
             <small>温柔正确的人总是难以生存，因为这世界既不温柔，也不正确</small>
         </div>
-        <div id="article_content">
-            <%=user.getSex()%>
-            <%=user%>
-            <%=user.getAddress()%>
-            <%=user.getUser_name()%>
+        <div id="article_content" style="display: flex;justify-content: space-between">
+            <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td><%=user.getUser_name()%></td>
+                    <td>账户</td>
+                    <td><%=user.getUser_id()%></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td><%=user.getSex()%></td>
+                    <td>邮箱：</td>
+                    <td><%=user.getUser_email()%></td>
+                </tr>
+                <tr>
+                    <td>年龄</td>
+                    <td><%=user.getAge()%></td>
+                    <td>身份：</td>
+                    <td><%=user.getIdentity()%></td>
+                </tr>
+                <tr>
+                    <td>家庭住址</td>
+                    <td><%=user.getAddress()%></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
         <div id="article_footer">
         </div>

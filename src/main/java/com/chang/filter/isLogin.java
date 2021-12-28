@@ -11,6 +11,7 @@ import java.io.IOException;
         ,"/view/MasterPage.jsp"
         ,"/view/readArticle.jsp"
         ,"/view/setUp.jsp"
+        ,"/view/MyInfo.jsp"
         ,"/view/write.jsp"})
 public class isLogin implements Filter {
     public void init(FilterConfig config) throws ServletException {

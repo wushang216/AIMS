@@ -108,10 +108,6 @@
                 </label>
                 <input class="inputIF" type="file" id="avatar" name="avatar" accept=".png" hidden>
                 <table>
-                    <%--<tr>--%>
-                    <%--    <td id="avatar_td">--%>
-                    <%--    </td>--%>
-                    <%--</tr>--%>
                     <tr>
                         <td><label for="user_name"></label>用户名:</td>
                        <td><input type="text" id="user_name"></td>
@@ -181,10 +177,18 @@
                     "address":$("#address").val()
                 },
                 success:function (date){
-                    if (date === "true"){
+                    if (date === "1"){
                         // layer.alert("修改成功",{ icon: 1, title: "成功", offset: "auto", skin: 'layui-layer-molv' })
                         alert("修改成功")
                         window.location.replace("${pageContext.request.contextPath}/view/MasterPage.jsp?n=1");
+                    }else if (date === "0"){
+                        // layer.alert("修改成功",{ icon: 1, title: "成功", offset: "auto", skin: 'layui-layer-molv' })
+                        alert("修改的邮箱不可与原邮箱相同")
+                        $("#email").focus()
+                    }else if (date === "-1"){
+                        // layer.alert("修改成功",{ icon: 1, title: "成功", offset: "auto", skin: 'layui-layer-molv' })
+                        alert("该邮箱已绑定其他账号")
+                        $("#email").focus()
                     }
                 }
             }
