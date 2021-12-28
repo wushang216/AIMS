@@ -202,7 +202,7 @@ public class operateArticle {
         List<article> articles;
         try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
             articleDao mapper = sqlSession.getMapper(articleDao.class);
-            articles = mapper.articleByLike();
+            articles = mapper.articleByClick();
         }
         return articles;
     }
