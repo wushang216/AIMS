@@ -66,4 +66,12 @@
         SET click_num = click_num + 1
         WHERE article_id = #{id}
     </update>
+    <!---->
+    <select id="articleByLike" resultType="article">
+        SELECT user_id,article_id,article_name,article_label,like_num,click_num,DATE FROM article WHERE Audit = 1 ORDER BY like_num DESC LIMIT 10
+    </select>
+    <!---->
+    <select id="articleByClick" resultType="article">
+        SELECT user_id,article_id,article_name,article_label,like_num,click_num,DATE FROM article WHERE Audit = 1 ORDER BY click_num DESC LIMIT 10
+    </select>
 </mapper>

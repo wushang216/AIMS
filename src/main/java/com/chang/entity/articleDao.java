@@ -18,6 +18,8 @@ public interface articleDao {
     int rewrite(articleDate articleDate);
     int Audit(@Param("id") String article_id,@Param("audit")String audit);
     int click(@Param("id") String article_id);
+    List<article> articleByLike();
+    List<article> articleByClick();
     List<article> GetArticleByLabel(String name);
     String getLabel(String Key);
 }

@@ -183,4 +183,27 @@ public class operateArticle {
         }
         return Ok;
     }
+
+    /**
+     *
+     */
+    public List<article> articleByLike(){
+        List<article>  articles;
+        try (SqlSession sqlSession = MyBatisUtil.getSqlSession()){
+            articleDao mapper = sqlSession.getMapper(articleDao.class);
+            articles = mapper.articleByLike();
+        }
+        return articles;
+    }
+    /**
+     *
+     */
+    public List<article> articleByClick() {
+        List<article> articles;
+        try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+            articleDao mapper = sqlSession.getMapper(articleDao.class);
+            articles = mapper.articleByLike();
+        }
+        return articles;
+    }
 }

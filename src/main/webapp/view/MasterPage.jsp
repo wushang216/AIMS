@@ -5,7 +5,7 @@
   Time: 15:21
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="error/notLogin.jsp"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.chang.dao.operateArticle" %>
 <%@ page import="com.chang.dao.operateUser" %>
@@ -21,6 +21,8 @@
     List<article> articles = operateArticle.GetArticle(Integer.parseInt(request.getParameter("n")));
     user user = operateUser.GetUser((String) session.getAttribute("ID"));
     List<userDate> users = operateUser.getAllUser((String) session.getAttribute("ID"));
+    article article1 = operateArticle.articleByLike();
+    article article2 = operateArticle.articleByClick();
     if (user.getAvatar().equals("")){
         user.setAvatar("/WebExperiment2_war_exploded/resources/image/头像.svg");
     }
@@ -144,9 +146,9 @@
             <a href="#" class="aside_right_leaderboard_img"><p><img src="${pageContext.request.contextPath}/resources/image/点赞.svg" alt="点赞"></p></a>
         </div>
         <div id="aside_right_attention">
-            <c:forEach var="user" items="<%=users%>">
+            <c:forEach var="article" items="<%=article1%>">
                 <div class="attention">
-                    <p>${user.user_name}</p>
+                    <p>${article.date}</p>
                 </div>
             </c:forEach>
             <div></div>
