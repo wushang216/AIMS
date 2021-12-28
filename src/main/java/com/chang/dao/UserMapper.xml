@@ -9,6 +9,9 @@
     <select id="getUser" resultType="user" parameterType="user">
         select user_id,user_name,user_email,avatar from user where user_id = #{user_id}
     </select>
+    <select id="getUserDate" resultType="userDate" parameterType="String">
+        select user_id,user_name , user_email, sex, age, address, avatar from user WHERE user_id = #{ID}
+    </select>
     <select id="getEmail" resultType="userDate" parameterType="String">
         select user_id,user_name,user_email,identity,seal from user where user_email = #{user_email}
     </select>

@@ -78,7 +78,7 @@
 </div>
 <aside id="aside_left">
     <div  id="aside_left_avatar">
-        <a href="#" class="layui-font-blue"><img src="<%=user.getAvatar()%>" alt="头像"></a>
+        <a href="${pageContext.request.contextPath}/view/MyInfo.jsp" class="layui-font-blue"><img src="<%=user.getAvatar()%>" alt="头像"></a>
         <div>
             <p><samp><%=user.getUser_name()%></samp></p>
         </div>
@@ -103,9 +103,9 @@
         </ul>
     </div>
     <div id="aside_left_board" onclick="">
-        <a href=""><p><img src="${pageContext.request.contextPath}/resources/image/设置.svg" alt="设置"><br>设置</p></a>
-        <a href=""><p><img src="${pageContext.request.contextPath}/resources/image/评论.svg" alt="设置"><br>评论</p></a>
-        <a href=""><p><img src="${pageContext.request.contextPath}/resources/image/点赞.svg" alt="设置"><br>点赞</p></a>
+        <a href="${pageContext.request.contextPath}/view/setUp.jsp"><p><img src="${pageContext.request.contextPath}/resources/image/设置.svg" alt="设置"><br>设置</p></a>
+        <a href=""><p><img src="${pageContext.request.contextPath}/resources/image/评论.svg" alt="评论"><br>评论</p></a>
+        <a href=""><p><img src="${pageContext.request.contextPath}/resources/image/点赞.svg" alt="点赞"><br>点赞</p></a>
     </div>
 </aside>
 <div id="center">

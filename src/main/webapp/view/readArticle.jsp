@@ -77,7 +77,7 @@
 </div>
 <aside id="aside_left">
     <div  id="aside_left_avatar">
-        <a href="#" class="layui-font-blue"><img src="<%=user.getAvatar()%>" alt="头像"></a>
+        <a href="${pageContext.request.contextPath}/view/MyInfo.jsp" class="layui-font-blue"><img src="<%=user.getAvatar()%>" alt="头像"></a>
         <div>
             <p><samp><%=user.getUser_name()%></samp></p>
         </div>

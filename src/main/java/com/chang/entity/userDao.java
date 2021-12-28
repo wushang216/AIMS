@@ -14,6 +14,13 @@ public interface userDao {
     user getUser(user user);
 
     /**
+     *
+     * @param ID
+     * @return
+     */
+    userDate getUserDate(String ID);
+
+    /**
      * 用户注册
      * @param userDate
      * @return

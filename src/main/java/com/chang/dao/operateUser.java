@@ -40,6 +40,20 @@ public class operateUser {
     }
 
     /**
+     *
+     * @param user_id
+     * @return
+     */
+    public userDate GetUserDate(String user_id){
+        userDate user;
+        try (SqlSession sqlSession = MyBatisUtil.getSqlSession()){
+            userDao mapper = sqlSession.getMapper(userDao.class);
+            user = mapper.getUserDate(user_id);
+        }
+        return user;
+    }
+
+    /**
      * 用于注册
      * @param account 用户账户
      * @param password 用户密码
