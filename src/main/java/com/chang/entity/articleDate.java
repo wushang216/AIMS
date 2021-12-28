@@ -2,7 +2,7 @@ package com.chang.entity;
 
 import java.sql.Date;
 
-public class articleDate {
+public class articleDate extends createVCode {
     private String article_name;
     private String article_id;
     private String article_label;
