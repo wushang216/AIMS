@@ -24,7 +24,7 @@
         SELECT user_id,article_id,article_name,article_label,like_num,click_num,date,article FROM article where article_id = #{article_id}
     </select>
     <!---->
-        <select id="GetArticleByName" parameterType="String" resultType="article">
+    <select id="GetArticleByName" parameterType="String" resultType="article">
         SELECT article_id,article_name,article_label,user_id FROM article WHERE article_name LIKE #{name} LIMIT 3
     </select>
     <!---->
@@ -74,4 +74,7 @@
     <select id="articleByClick" resultType="article">
         SELECT user_id,article_id,article_name,article_label,like_num,click_num,DATE FROM article WHERE Audit = 1 ORDER BY click_num DESC LIMIT 10
     </select>
+    <delete id="deleteArticle" parameterType="int">
+
+    </delete>
 </mapper>
