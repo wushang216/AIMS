@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface articleDao {
     int GetArticleNum();
-    int GetArticleAllNum();
     List<article> GetArticle(int n);
     List<articleDate> GetAllArticle();
     int GetArticleNumByUser(String id);

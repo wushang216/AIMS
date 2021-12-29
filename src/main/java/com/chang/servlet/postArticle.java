@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.Date;
 
 @WebServlet(name = "postArticle", value = "/postArticle")
 public class postArticle extends HttpServlet {
@@ -28,11 +29,11 @@ public class postArticle extends HttpServlet {
         articleDate.setArticle(request.getParameter("article"));
         articleDate.setArticle_name(request.getParameter("article_name"));
         articleDate.setArticle_label(label);
-        int num = operateArticle.GetArticleAllNum();
         int i;
         //判断该文章是否已经存在与数据库 若存在下方判断为真
         if (request.getParameter("article_id") == null){
-            articleDate.setArticle_id((num +1)+"");
+            long time = new Date(System.currentTimeMillis()).getTime();
+            articleDate.setArticle_id(String.valueOf(time).substring(2,11));
             articleDate.setUser_id((String) request.getSession().getAttribute("ID"));
             i = operateArticle.postArticle(articleDate);
             if (i == 1){

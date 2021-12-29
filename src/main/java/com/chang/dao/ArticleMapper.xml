@@ -12,10 +12,6 @@
         SELECT user_id,article_id,article_name,DATE,Audit FROM article where Audit != -1 ORDER BY DATE ASC
     </select>
     <!---->
-    <select id="GetArticleNum" resultType="int">
-        SELECT COUNT(*) FROM article WHERE Audit = 1
-    </select>
-    <!---->
     <select id="GetArticleAllNum" resultType="int">
         SELECT COUNT(*) FROM article
     </select>

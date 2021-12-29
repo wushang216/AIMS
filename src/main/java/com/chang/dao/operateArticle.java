@@ -24,18 +24,6 @@ public class operateArticle {
         return num;
     }
     /**
-     * 获取文章的数量
-     * @return
-     */
-    public int GetArticleAllNum(){
-        int num;
-        try (SqlSession sqlSession = MyBatisUtil.getSqlSession()){
-            articleDao mapper = sqlSession.getMapper(articleDao.class);
-            num = mapper.GetArticleAllNum();
-        }
-        return num;
-    }
-    /**
      * 获取所有文章的列表
      * @return
      */
