@@ -136,6 +136,7 @@
         <%if (articleDate.getUser_id().equals(session.getAttribute("ID"))){%>
         <p id="button_rewrite">
             <button id="rewrite" value="<%=articleDate.getArticle_id()%>"><strong>重写</strong></button>&nbsp;
+            <button id="delete" value="<%=articleDate.getArticle_id()%>"><strong>删除</strong></button>&nbsp;
         </p>
         <%}%>
 

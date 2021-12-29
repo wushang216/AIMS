@@ -47,7 +47,18 @@ public class operateArticle {
         }
         return articles;
     }
-
+    /**
+     * 删除文章
+     * @param article_id
+     */
+    public void deleteArticle(String article_id){
+        try (SqlSession sqlSession = MyBatisUtil.getSqlSession()){
+            articleDao mapper = sqlSession.getMapper(articleDao.class);
+            mapper.deleteArticle(article_id);
+            System.out.println(article_id);
+            sqlSession.commit();
+        }
+    }
     /**
      * 获取文章内容
      * @param articleDate

@@ -12,8 +12,8 @@
         SELECT user_id,article_id,article_name,DATE,Audit FROM article where Audit != -1 ORDER BY DATE ASC
     </select>
     <!---->
-    <select id="GetArticleAllNum" resultType="int">
-        SELECT COUNT(*) FROM article
+    <select id="GetArticleNum" resultType="int">
+        SELECT COUNT(*) FROM article WHERE Audit = 1
     </select>
     <!---->
     <select id="GetArticleInformation" parameterType="articleDate" resultType="articleDate">
@@ -70,7 +70,8 @@
     <select id="articleByClick" resultType="article">
         SELECT user_id,article_id,article_name,article_label,like_num,click_num,DATE FROM article WHERE Audit = 1 ORDER BY click_num DESC LIMIT 10
     </select>
-    <delete id="deleteArticle" parameterType="int">
-
+    <delete id="deleteArticle" parameterType="String">
+        DELETE FROM article
+        WHERE article_id = #{id}
     </delete>
 </mapper>

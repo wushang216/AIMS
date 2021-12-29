@@ -9,6 +9,7 @@ public interface articleDao {
     int GetArticleNum();
     List<article> GetArticle(int n);
     List<articleDate> GetAllArticle();
+    void deleteArticle(String article_id);
     int GetArticleNumByUser(String id);
     List<article> GetArticleByUser(@Param("id") String id,@Param("n") int n);
     articleDate GetArticleInformation(String article_id);
