@@ -21,8 +21,8 @@
     List<article> articles = operateArticle.GetArticle(Integer.parseInt(request.getParameter("n")));
     user user = operateUser.GetUser((String) session.getAttribute("ID"));
     List<userDate> users = operateUser.getAllUser((String) session.getAttribute("ID"));
-    article article1 = operateArticle.articleByLike();
-    article article2 = operateArticle.articleByClick();
+    List<article> articles1 = operateArticle.articleByLike();
+    List<article> articles2 = operateArticle.articleByClick();
     if (user.getAvatar().equals("")){
         user.setAvatar("/WebExperiment2_war_exploded/resources/image/头像.svg");
     }
@@ -146,18 +146,31 @@
             <a href="#" class="aside_right_leaderboard_img"><p><img src="${pageContext.request.contextPath}/resources/image/点赞.svg" alt="点赞"></p></a>
         </div>
         <div id="aside_right_attention">
-            <c:forEach var="article" items="<%=article1%>">
+            <c:forEach var="article" items="<%=articles1%>">
                 <div class="attention">
-                    <p>${article.date}</p>
+                    <p>
+                            ${article.article_name}&nbsp;
+                            ${article. like}</p>
                 </div>
             </c:forEach>
-            <div></div>
         </div>
-        <div id="aside_right_comment">
-
+        <div id="aside_right_comment" style="display: none">
+            <c:forEach var="article" items="<%=articles1%>">
+                <div class="comment">
+                    <p>
+                            ${article.article_name}&nbsp;
+                            ${article. like}</p>
+                </div>
+            </c:forEach>
         </div>
-        <div id="aside_right_like">
-
+        <div id="aside_right_like" style="display: none">
+            <c:forEach var="article" items="<%=articles1%>">
+                <div class="Like">
+                    <p>
+                            ${article.article_name}&nbsp;
+                    ${article. like}</p>
+                </div>
+            </c:forEach>
         </div>
     </aside>
 </div>

@@ -16,6 +16,27 @@ $(document).ready(function (){
 
         }
     )
+    img.click(function (){
+        switch ($(this).index()) {
+            case 0 :
+                $("#aside_right_attention").css("display","")
+                $("#aside_right_comment").css("display","none")
+                $("#aside_right_like").css("display","none")
+                break;
+            case 1 :
+                $("#aside_right_attention").css("display","none")
+                $("#aside_right_comment").css("display","")
+                $("#aside_right_like").css("display","none")
+                break;
+            case 2:
+                $("#aside_right_attention").css("display","none")
+                $("#aside_right_comment").css("display","none")
+                $("#aside_right_like").css("display","")
+                break;
+            default :
+                break;
+        }
+    })
     content.mouseover(function (){
         var label = $(".content_label")
         $(this).find(label).fadeIn()
