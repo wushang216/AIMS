@@ -114,7 +114,7 @@
                     </tr>
                     <tr>
                         <td><label for="age"></label>年龄</td>
-                        <td><input type="text" id="age"></td>
+                        <td><input type="number" id="age"  max="70" min="6"></td>
                     </tr>
                     <tr>
                         <td><label for="sex"></label>性别</td>
